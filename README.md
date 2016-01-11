@@ -87,6 +87,11 @@ var ascii = asciiPixels(imageData)
 console.log(ascii)
 ```
 
+## credit
+
+This project is based on the awesome [ascii-camera](https://github.com/idevelop/ascii-camera)
+by [Andrei Gheorghe](https://github.com/idevelop)
+
 ## license
 
 MIT
