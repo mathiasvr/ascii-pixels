@@ -1,0 +1,21 @@
+{
+  "name": "ascii-pixels",
+  "version": "1.0.0",
+  "description": "Convert raw image data to ascii art",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ascii",
+    "image",
+    "picture",
+    "convert",
+    "pixel",
+    "raw",
+    "art",
+    "canvas"
+  ],
+  "author": "Mathias Rasmussen <mathiasvr@gmail.com>",
+  "license": "MIT"
+}
