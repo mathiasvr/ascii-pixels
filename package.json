@@ -17,5 +17,13 @@
     "canvas"
   ],
   "author": "Mathias Rasmussen <mathiasvr@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathiasvr/ascii-pixels.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mathiasvr/ascii-pixels/issues"
+  },
+  "homepage": "https://github.com/mathiasvr/ascii-pixels#readme"
 }
