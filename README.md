@@ -16,9 +16,22 @@ npm install ascii-pixels
 input raw image data, and optionally set contrast or invert colors
 
 ```js
-var options = { contrast: 128, invert: true }
+var options = {
+  contrast: 128,    // range -255 to +255
+  invert: true      // invert brightness
+}
 
 var ascii = asciiPixels(imageData, options)
+```
+
+The raw image data has this format:
+
+```js
+var imageData = {
+  data: frameData,
+  width: width,
+  height: height
+}
 ```
 
 ## examples
@@ -31,7 +44,7 @@ Here are a few examples:
 ```js
 var fs = require('fs')
 var jpeg = require('jpeg-js')
-var asciiPixels = require('.')
+var asciiPixels = require('ascii-pixels')
 
 var buffer = fs.readFileSync('image.jpg')
 
