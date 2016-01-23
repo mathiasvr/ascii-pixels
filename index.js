@@ -6,6 +6,7 @@ function imageToAscii (imageData, options) {
   var width = imageData.width
   var height = imageData.height
   var data = imageData.data
+  var bytesPerPixel = imageData.format === 'RGB24' ? 3 : 4
 
   // calculate contrast factor
   // http://www.dfstudios.co.uk/articles/image-processing-algorithms-part-5/
@@ -15,7 +16,7 @@ function imageToAscii (imageData, options) {
 
   for (var y = 0; y < height; y += 2) {
     for (var x = 0; x < width; x++) {
-      var offset = (y * width + x) * 4
+      var offset = (y * width + x) * bytesPerPixel
 
       // pixel color at offset
       var r = data[offset]
