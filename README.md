@@ -24,7 +24,7 @@ var options = {
 var ascii = asciiPixels(imageData, options)
 ```
 
-The raw image data has this format:
+The raw image data has the following format:
 
 ```js
 var imageData = {
@@ -33,6 +33,7 @@ var imageData = {
   height: height
 }
 ```
+You may optionally provide the pixel format: `imageData.format = 'RGB24'`, by default it is `RGB32`.
 
 ## examples
 
@@ -98,6 +99,21 @@ var imageData = context.getImageData(0, 0, canvas.width, canvas.height)
 var ascii = asciiPixels(imageData)
 
 console.log(ascii)
+```
+
+## sample output
+```
+                                        C,                                      
+                                        8@@@                                    
+                                        0@@@                                    
+                                        0@@@                                    
+     @@             .::.             CG 8@@@         G8              ...        
+ t@@@@@@@@1      .:::::::;.       @@@@@@@@@@     ,@@@@@@@@;      .        .     
+@@@@@ff@@@@@    ::::;;::;:::    @@@@@0G@@@@@    @@@@@GG@@@@@    .     ..,       
+@@@@    @@@@    ::::;;:;;;::    0@@@    8@@@    8@@@ ,, @@,     .     ...       
+@@@@    @@@@    :::;;;;;;;::    8@@@t  ;@@@@    8@@@L           .   ...  ,      
+@@@,    :@@@     ,:::;;:::,.    i@@@@@@@@@@f    ,@@@@@@8         . .      ..    
+                    ,,,:           .@@@@;           8@@@            .  ,        
 ```
 
 ## credit
