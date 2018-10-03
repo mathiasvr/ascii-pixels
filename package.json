@@ -25,5 +25,16 @@
   "bugs": {
     "url": "https://github.com/mathiasvr/ascii-pixels/issues"
   },
-  "homepage": "https://github.com/mathiasvr/ascii-pixels#readme"
+  "homepage": "https://github.com/mathiasvr/ascii-pixels#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "jpeg-js": "^0.3.4"
+  },
+  "files": [
+    "lib/"
+  ],
+  "directories": {
+    "example": "example",
+    "lib": "lib"
+  }
 }

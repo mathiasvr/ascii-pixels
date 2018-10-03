@@ -14,6 +14,7 @@ function imageToAscii (imageData, options) {
 
   var ascii = ''
 
+  // skip every second row, because ascii characters are not squares
   for (var y = 0; y < height; y += 2) {
     for (var x = 0; x < width; x++) {
       var offset = (y * width + x) * bytesPerPixel
@@ -47,10 +48,17 @@ function clamp (value, min, max) {
   return Math.min(Math.max(value, min), max)
 }
 
-module.exports = function (imageData, options) {
-  if (!options) options = { }
-  if (typeof options.contrast === 'undefined') options.contrast = 128
-  if (typeof options.invert === 'undefined') options.invert = false
+// todo
+function gen (fn) {
+  return function (imageData, options) {
+    if (!options) options = { }
+    if (typeof options.contrast === 'undefined') options.contrast = 128
+    if (typeof options.invert === 'undefined') options.invert = false
 
-  return imageToAscii(imageData, options)
+    return fn(imageData, options)
+  }
 }
+
+module.exports = gen(imageToAscii)
+module.exports.braille = gen(require('./lib/braille'))
+module.exports.blocks = gen(require('./lib/uni-blocks'))
