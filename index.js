@@ -1,5 +1,7 @@
 // Based on the awesome https://github.com/idevelop/ascii-camera by Andrei Gheorghe
 
+var style = require('ansi-styles')
+
 var characters = ' .,:;i1tfLCG08@'.split('')
 
 function imageToAscii (imageData, options) {
@@ -13,6 +15,7 @@ function imageToAscii (imageData, options) {
   var contrastFactor = (259 * (options.contrast + 255)) / (255 * (259 - options.contrast))
 
   var ascii = ''
+  var lastColor
 
   for (var y = 0; y < height; y += 2) {
     for (var x = 0; x < width; x++) {
@@ -33,6 +36,14 @@ function imageToAscii (imageData, options) {
       var brightness = (0.299 * r + 0.587 * g + 0.114 * b) / 255
 
       if (!options.invert) brightness = 1 - brightness
+
+      if (options.color) {
+        var color = style.color.ansi.rgb(r, g, b)
+        if (color !== lastColor) {
+          ascii += color
+          lastColor = color
+        }
+      }
 
       ascii += characters[Math.round(brightness * (characters.length - 1))]
     }
