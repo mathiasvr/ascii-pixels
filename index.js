@@ -40,7 +40,7 @@ function imageToAscii (imageData, options) {
     ascii += '\n'
   }
 
-  return ascii
+  return ascii.slice(0, -1)
 }
 
 function clamp (value, min, max) {
