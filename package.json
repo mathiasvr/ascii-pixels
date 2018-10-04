@@ -26,7 +26,9 @@
     "url": "https://github.com/mathiasvr/ascii-pixels/issues"
   },
   "homepage": "https://github.com/mathiasvr/ascii-pixels#readme",
-  "dependencies": {},
+  "dependencies": {
+    "ansi-styles": "^3.2.1"
+  },
   "devDependencies": {
     "jpeg-js": "^0.3.4"
   },

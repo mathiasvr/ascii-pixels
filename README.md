@@ -1,14 +1,16 @@
-# Ascii Pixels [![npm][npm-image]][npm-url]
+# ascii-pixels
 
-[npm-image]: https://img.shields.io/npm/v/ascii-pixels.svg
-[npm-url]: https://www.npmjs.com/package/ascii-pixels
+[![npm](https://img.shields.io/npm/v/ascii-pixels.svg)](https://npm.im/ascii-pixels)
+![downloads](https://img.shields.io/npm/dt/ascii-pixels.svg)
+[![license](https://img.shields.io/:license-MIT-blue.svg)](https://mvr.mit-license.org)
+
 
 Convert raw image data to ascii art!
 
 ## install
 
-```
-npm install ascii-pixels
+```shell
+$ npm install ascii-pixels
 ```
 
 ## usage

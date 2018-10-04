@@ -1,3 +1,4 @@
+var chalk = require('chalk')
 var asciiPixels = require('..')
 
 var filePath = require('path').join(__dirname, 'lena.jpg')
@@ -8,11 +9,19 @@ var imageData = require('jpeg-js').decode(buffer)
 
 var opts = { invert: true, contrast: 90 }
 
-var ascii = asciiPixels(imageData, opts)
+var ascii = asciiPixels.color(imageData, opts)
+
+// ascii = chalk.rgb(255, 136, 0)(ascii)
+// ascii = chalk.rgb(255, 136, 0).bold(ascii)
+// ascii = chalk.bold(ascii)
+
 console.log(ascii)
 
-var braille = asciiPixels.braille(imageData, opts)
-console.log(braille)
+const fs = require('fs')
+fs.writeFileSync('teststuff3.txt', ascii)
 
-var blocks = asciiPixels.blocks(imageData, opts)
-console.log(blocks)
+// var braille = asciiPixels.braille(imageData, opts)
+// console.log(braille)
+
+// var blocks = asciiPixels.blocks(imageData, opts)
+// console.log(blocks)

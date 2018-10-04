@@ -41,11 +41,13 @@ function imageToAscii (imageData, options) {
     ascii += '\n'
   }
 
+  // todo: ascii.slice(0, -1), don't output extra newline
   return ascii
 }
 
 function clamp (value, min, max) {
   return Math.min(Math.max(value, min), max)
+  // todo: is this faster?; return value > max ? max : value < min ? min : value
 }
 
 // todo
@@ -62,3 +64,4 @@ function gen (fn) {
 module.exports = gen(imageToAscii)
 module.exports.braille = gen(require('./lib/braille'))
 module.exports.blocks = gen(require('./lib/uni-blocks'))
+module.exports.color = gen(require('./lib/color'))
